@@ -1,25 +1,29 @@
 import { useState } from "react";
 import Info from "./info";
 import Education from "./education";
+import Summary from "./summary";
+export default function App() {
+    const [general, setgenral] = useState({ name: "", email: "", linkedin: "", github: "", contact: "" });
+    const [education, seteducation] = useState({
+        university: "",
+        title: "",
+        field: "",
+        from_date: "",
+        to_date: "",
+        relevant_coursework: ""
+    });
 
-export default function App(){
-    const[general,setgenral] = useState({name:"",email:"",linkedin:"",github:"",contact:""});
-    const[education,seteducation] = useState ({
-        university:"", 
-        title:"",
-        field:"",
-        from_date:"",
-         to_date:"",
-         relevant_coursework:""
-        });
+    const [sum , setsum]= useState({summary:""});
 
-   return (
-    <div>
-        <Info info ={general} setinfo={setgenral} />
-        <Education info={education} setinfo={seteducation}/>
+    return (
+        <div>
+            <div id="wrapper">
+                <Info class=" informmation" info={general} setinfo={setgenral} />
+                <Education class="information" info={education} setinfo={seteducation} />
+                <Summary class="information" info = {sum} setinfo={setsum}/>
+            </div>
 
-
-    </div>
-   )
+        </div>
+    )
 
 }

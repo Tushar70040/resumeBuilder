@@ -17,7 +17,7 @@ export default function Info({ info, setinfo }) {
                     <input name="email" placeholder="Email" type="email" value={info.email} onChange={Handle}/>
                     <input name="linkedin" placeholder="Linkedin" value={info.linkedin} onChange={Handle}/>
                     <input name="github" placeholder="Github" value={info.github} onChange={Handle}/>
-                    <input name="contact" placeholder="contact no" value={info.contact} onChange={Handle}/>
+                    <input name="contact" type="number" placeholder="contact no" value={info.contact} onChange={Handle}/>
                     <button className="edit" onClick={()=>{setedit(false)}}>submit</button>
                 </>
                 ):(

@@ -9,10 +9,12 @@ export default function Education({ info, setinfo }) {
     }
 
     function formatDate(dateStr) {
-  if (!dateStr) return '';
-  const [year, month, day] = dateStr.split('-');
-  return `${day}/${month}/${year}`;
-}
+        if (!dateStr){ return ''}
+        const [year, month, day] = dateStr.split('-');
+        return `${day}/${month}/${year}`;
+    }
+
+
     return (
         <div className="info">
             <h3>Education</h3>
@@ -25,11 +27,9 @@ export default function Education({ info, setinfo }) {
                         <input name="relevant_coursework" placeholder="Relevant coursework" value={info.relevant_coursework} onChange={Handle} />
                         <div className="date">
                             <label>FROM</label>
-
                             <input name="from_date" type="date" value={info.from_date} onChange={Handle} placeholder="" />
 
-
-                           <label>TO</label>
+                            <label>TO</label>
                             <input name="to_date" type="date" value={info.to_date} onChange={Handle} placeholder="" />
                         </div>
                         <button className="edit" onClick={() => { setedit(false) }}>submit</button>
@@ -44,7 +44,7 @@ export default function Education({ info, setinfo }) {
                             <p><strong>Date of Gradution :</strong>{formatDate(info.from_date)} To {formatDate(info.to_date)}</p>
 
 
-                            <button className="edit" onClick={() => { setedit(true) }}>edit</button>
+                            <button className="edit" onClick={() => { setedit(true) }}>Edit</button>
                         </div>
                     </>
                 )
