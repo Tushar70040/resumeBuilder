@@ -15,7 +15,7 @@ export default function Summary({info,setinfo}){
             edit ? (
                 <>
                 <textarea name="summary" value={info.summary} onChange={Handle} placeholder="enter your bio"/>
-                <button className="edit" onClick= {()=>{setedit(false)}}> submit</button>
+                <button className="edit" onClick= {()=>{setedit(false)}}>submit</button>
             
                 
                 
@@ -23,7 +23,7 @@ export default function Summary({info,setinfo}){
             ):(
                 <div className="data">
                     <p><strong>Bio:</strong> {info.summary}</p>
-                    <button onClick={()=>{setedit(true)}}>Edit</button>
+                    <button  className="edit" onClick={()=>{setedit(true)}}>Edit</button>
                     </div>
             )
 

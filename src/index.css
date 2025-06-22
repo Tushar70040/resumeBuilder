@@ -10,30 +10,29 @@ body{
    background-color:rgb(24, 24, 24) ;
 }
 #header{
-  width: 100%;
+  width: 100vw;
   height: 28vh;
  
   color: white ;
   text-align: center;
   align-items: center;
   font-family: Mulish;
-  font-size: 30px;
+  font-size:25px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  
   background-image:linear-gradient(rgba(32, 32, 32, 0),rgb(24, 24, 24)),url(images/adam-jang-MLKrf51NV8w-unsplash.jpg) ;
   background-size:  cover;
   background-position: center;
-  #h4{
-    font-weight: 300;
 
-  }
-
-  
 
   
 }
+
+  #h4{
+    font-weight: 250;
+
+  }
 
 #wrapper{
   display: flex;
@@ -47,10 +46,7 @@ body{
   display: flex;
   flex-direction: column;
   color: white;
-  flex-wrap: wrap;
-  width: 100%;
-
-  
+  flex-wrap: wrap;  
   margin: 5px;
   align-items: center;
   padding: 1%;
@@ -60,10 +56,10 @@ body{
 
 }
 input{
-  padding: 5px 20px;
+  padding: 5px 20px; /* for input */
   border-radius: 10px;
   border: none;
-  width: 300px;
+  width: 260px;
   margin-top: 5px;
   font-size: 1rem
 }
@@ -109,7 +105,7 @@ textarea{
     padding: 5px 20px;
   border-radius: 10px;
   border: none;
-  width: 300px;
+  width: 260px;
   font-size: 1rem;
   height: 80px;
   margin-top: 5px;
