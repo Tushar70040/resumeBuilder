@@ -22,8 +22,9 @@ export default function App() {
             <div id="wrapper">
                 <Info class=" informmation" info={general} setinfo={setgenral} />
                 <Education class="information" info={education} setinfo={seteducation} />
+                  <Summary class="information" info = {sum} setinfo={setsum}/>
                  <Projects class="information" info={project} setinfo={setproject}/>
-                <Summary class="information" info = {sum} setinfo={setsum}/>
+              
 
             </div>
 
