@@ -24,8 +24,6 @@ export default function App() {
                 <Education class="information" info={education} setinfo={seteducation} />
                   <Summary class="information" info = {sum} setinfo={setsum}/>
                  <Projects class="information" info={project} setinfo={setproject}/>
-              
-
             </div>
 
         </div>
