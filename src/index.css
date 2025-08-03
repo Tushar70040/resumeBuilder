@@ -39,7 +39,7 @@ body{
  padding: 20px;
   flex-wrap: wrap;
   justify-content: center;
-  align-items:center ;
+  align-items:start ;
   
 }
 .info{/*this is for the whole from setup*/
@@ -148,4 +148,8 @@ textarea:focus{
  
   
 
+}
+li{
+  color: white;
+  display: flex;
 }

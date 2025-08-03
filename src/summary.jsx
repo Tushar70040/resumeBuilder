@@ -14,7 +14,7 @@ export default function Summary({info,setinfo}){
         {
             edit ? (
                 <>
-                <textarea name="summary" value={info.summary} onChange={Handle} placeholder="enter your bio"/>
+                <textarea name="summary" value={info.summary} onChange={Handle} placeholder="Enter your bio"/>
                 <button className="edit" onClick= {()=>{setedit(false)}}>submit</button>
             
                 

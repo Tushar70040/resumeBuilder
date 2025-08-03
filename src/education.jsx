@@ -16,7 +16,7 @@ export default function Education({ info, setinfo }) {
 
 
     return (
-        <div className="info">
+        <div className="info"id="edu">
             <h3>Education</h3>
             {
                 edit ? (

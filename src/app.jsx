@@ -15,7 +15,7 @@ export default function App() {
     });
 
     const [sum , setsum]= useState({summary:""});
-    const[project,setproject] = useState({experience:"" , details:"" ,date:""});
+
 
     return (
         <div>
@@ -23,7 +23,8 @@ export default function App() {
                 <Info class=" informmation" info={general} setinfo={setgenral} />
                 <Education class="information" info={education} setinfo={seteducation} />
                   <Summary class="information" info = {sum} setinfo={setsum}/>
-                 <Projects class="information" info={project} setinfo={setproject}/>
+                  <Projects/>
+             
             </div>
 
         </div>

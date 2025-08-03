@@ -1,58 +1,77 @@
 import { useState } from "react";
 
-export default function Projects({ info, setinfo }) {
-    const [edit, setedit] = useState(true);
+let id = 0;
+export default function Projects() {
+   const [form,setform] = useState({project:"",detils:"",date:""});
+   const [data,setdata] = useState([]);
 
-    function Handle(e) {
-        setinfo({ ...info, [e.target.name]: e.target.value });
-    }
 
-     function formatDate(dateStr) {
-        if (!dateStr){ return ''}
-        const [year, month, day] = dateStr.split('-');
-        return `${day}/${month}/${year}`;
-    }
+   function Handle(e){
+    const{name,value} = e.target;
+    setform(prev=>({
+      ...prev,[name]:value
+    }));
+   }
 
-    return (
-        <div className="info">
-            <h3>Projects</h3>
-            {edit ? (
-                <>
-                    <input
-                        value={info.experience}
-                        name="experience"
-                        placeholder="Project name"
-                        onChange={Handle}
-                    />
-                    <input type="date" value={info.date} placeholder="Date"  onChange={Handle}name="date"/>
-                    <textarea placeholder="About it" value={info.details} name="details" onChange={Handle} />
-                    <button
-                        className="edit"
-                        onClick={() => {
-                            setedit(false);
-                        }}
-                    >
-                        submit
-                    </button>
-                </>
-            ) : (
-                <div className="data">
-                    <p>
-                        <strong>project name:</strong>
-                        {info.experience}
-                    </p>
-                    <p><strong>Date:</strong> {formatDate(info.date)}</p>
-                    <p><strong>About it:</strong>{info.details}</p>
-                    <button
-                        className="edit"
-                        onClick={() => {
-                            setedit(true);
-                        }}
-                    >
-                        edit
-                    </button>
-                </div>
-            )}
-        </div>
-    );
+   function Add(){
+    if(setform ==="") return;
+    setdata(prev=>[
+      ...prev,{id:id++,...form}
+    ])
+    setform({project:"",detils:"",date:""});
+   }
+
+
+   return(
+      <>
+      <div className="info">
+        <h3>Projects</h3>
+      <input
+        name="project"
+        placeholder="Project name"
+        value={form.project}
+        onChange={Handle}
+      />
+      
+      <input
+        name="date"
+        type="date"
+        placeholder="Date"
+        value={form.date}
+        onChange={Handle}
+      />
+      <textarea
+        name="detils"
+        placeholder="Details"
+        value={form.detils}
+        onChange={Handle}
+      />
+      <button className="edit" onClick={Add}>Add</button>
+      </div>
+       <ul>
+        {data.map(item => (
+          <li key={item.id}>
+             <div className="data">
+              <h3>project{item.id}</h3>
+                    <p><strong>Name:</strong>{item.project}</p>
+                      <p><strong>Date:</strong>{item.date}</p>
+                       <p><strong>details:</strong>{item.detils}</p>
+                     
+                   </div>
+           
+          </li>
+        ))}
+      </ul>
+
+
+
+
+      </>
+   )
+
+
+ 
+
+
+
 }
